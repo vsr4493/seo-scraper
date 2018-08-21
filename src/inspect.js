@@ -26,7 +26,7 @@ async function scrapeSEOData() {
 				}))
 		);
 		const parsedLinkTags = linkTags.filter(tag => config.options.linkTags.indexOf(tag.rel) !== -1);
-		const parsedMetaTags = metaTags.filter(tag => config.options.metaTags.indexOf(tag.name) !== -1);
+		const parsedMetaTags = metaTags.filter(tag => config.options.metaTags.indexOf(tag.name || tag.property) !== -1);
   	results.push({
   		url,
   		linkTags: parsedLinkTags,
